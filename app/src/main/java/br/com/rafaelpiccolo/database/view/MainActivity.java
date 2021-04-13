@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -22,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     ClienteController clienteController;
     Cliente cliente;
-    Button btnAdd;
-    EditText txtName;
-    EditText txtEmail;
+    Button btnAdd, btnDelete, btnUpdate;
+    EditText txtName, txtEmail, txtID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         clienteController = new ClienteController(getApplicationContext());
         btnAdd = findViewById(R.id.btnConfirm);
+        btnDelete = findViewById(R.id.btnDelete);
+        btnUpdate = findViewById(R.id.btnUptade);
+        txtID = findViewById(R.id.txtID);
         txtName = findViewById(R.id.txtName);
         txtEmail = findViewById(R.id.txtEmail);
 
@@ -50,6 +53,18 @@ public class MainActivity extends AppCompatActivity {
                     clienteController.incluir(cliente);
                     Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() + " incluido com sucesso",
                             Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(txtID.getText().toString())){
+                    txtID.setError("This field cannot be empty");
+                }
+                else {
+                    clienteController.deletar(txtID.getId());
                 }
             }
         });

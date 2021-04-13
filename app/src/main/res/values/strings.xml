@@ -3,4 +3,7 @@
     <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="button">Add</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="id">ID</string>
 </resources>
