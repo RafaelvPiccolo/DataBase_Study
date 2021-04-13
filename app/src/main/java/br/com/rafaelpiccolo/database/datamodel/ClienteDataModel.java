@@ -3,7 +3,6 @@ package br.com.rafaelpiccolo.database.datamodel;
 public class ClienteDataModel {
 
     public static final String TABELA = "cliente";
-
     public static final String ID = "id";
     public static final String NOME = "nome";
     public static final String EMAIL = "email";

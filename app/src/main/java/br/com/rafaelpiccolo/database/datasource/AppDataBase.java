@@ -34,7 +34,7 @@ public class AppDataBase extends SQLiteOpenHelper {
         db.execSQL(ClienteDataModel.criarTabela());
         Log.d(AppUtil.TAG, "onCreate: Tabela Cliente criada..."+ClienteDataModel.criarTabela());
         db.execSQL(ProdutoDataModel.criarTabela());
-        Log.d(AppUtil.TAG, "onCreate: Tabela Produto criada..."+ClienteDataModel.criarTabela());
+        Log.d(AppUtil.TAG, "onCreate: Tabela Produto criada..."+ProdutoDataModel.criarTabela());
     }
 
     @Override
@@ -112,7 +112,6 @@ public class AppDataBase extends SQLiteOpenHelper {
         cursor = db.rawQuery(sql, null);
 
         if(cursor.moveToFirst()){
-
             do{
                 obj = new Cliente();
 

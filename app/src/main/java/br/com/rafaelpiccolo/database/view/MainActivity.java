@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.rafaelpiccolo.database.R;
@@ -18,78 +22,56 @@ public class MainActivity extends AppCompatActivity {
 
     ClienteController clienteController;
     Cliente cliente;
-    
-//    ProdutoController produtoController;
-//    Produto produto;
+    Button btnAdd;
+    EditText txtName;
+    EditText txtEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         clienteController = new ClienteController(getApplicationContext());
-//        produtoController = new ProdutoController(getApplicationContext());
+        btnAdd = findViewById(R.id.btnConfirm);
+        txtName = findViewById(R.id.txtName);
+        txtEmail = findViewById(R.id.txtEmail);
 
-        for (int i = 0; i < 49 ; i++) {
+        cliente = new Cliente();
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(txtName.getText().toString())) {
+                    txtName.setError("This field cannot be empty");
+                } else if (TextUtils.isEmpty(txtEmail.getText().toString())) {
+                    txtEmail.setError("This field cannot be empty");
+                } else {
+                    cliente.setNome(txtName.getText().toString());
+                    cliente.setEmail(txtEmail.getText().toString());
+                    clienteController.incluir(cliente);
+                    Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() + " incluido com sucesso",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-            cliente = new Cliente();
-            cliente.setNome("Cliente"+ i);
-            cliente.setEmail("emailgenerico"+i+"@gmail.com");
-
-            clienteController.incluir(cliente);
-        }
-
-        for (Cliente obj: clienteController.listar()) {
-            Log.e("retorno", "onCreate: "+obj.getId()+" "+obj.getNome()+" "+obj.getEmail());
-        }
-
-//        produto = new Produto();
-//        produto.setNomeDoProduto("Macbook Air");
-//        produto.setFornecedor("Apple");
-
-
-//        if (clienteController.incluir(cliente)) {
-//            Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() + " incluido com sucesso",
-//                    Toast.LENGTH_SHORT).show();
-//
-//            Log.i(AppUtil.TAG, "Cliente " + cliente.getNome() + " Incluido com sucesso");
-//        } else {
-//            Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() + " não incluido com sucesso",
-//                    Toast.LENGTH_SHORT).show();
-//            Log.e(AppUtil.TAG, "Cliente " + cliente.getNome() + " não Incluido com sucesso");
+//        for (Cliente obj : clienteController.listar()) {
+//            Log.e("retorno", "onCreate: " + obj.getId() + " " + obj.getNome() + " " + obj.getEmail());
 //        }
 //
-//        if (produtoController.incluir(produto)) {
-//            Toast.makeText(MainActivity.this, "Produto " + cliente.getNome() + " incluido com sucesso",
-//                    Toast.LENGTH_SHORT).show();
-//
-//            Log.i(AppUtil.TAG, "Produto " + cliente.getNome() + " Incluido com sucesso");
-//        } else {
-//            Toast.makeText(MainActivity.this, "Produto " + cliente.getNome() + " não incluido com sucesso",
-//                    Toast.LENGTH_SHORT).show();
-//            Log.e(AppUtil.TAG, "Produto " + cliente.getNome() + " não Incluido com sucesso");
-//        }
-
 //        if (clienteController.deletar(cliente.getId())) {
 //            Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() + " removido com sucesso",
 //                    Toast.LENGTH_SHORT).show();
-//
-//            Log.i(AppUtil.TAG, "Cliente " + cliente.getNome() + " removido com sucesso");
 //        } else {
 //            Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() + " não removido com sucesso",
 //                    Toast.LENGTH_SHORT).show();
-//            Log.e(AppUtil.TAG, "Produto " + cliente.getNome() + " não removido com sucesso");
 //        }
-
-//        if (clienteController.alterar(cliente)){
+//
+//        if (clienteController.alterar(cliente)) {
 //            Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() + " alterado com sucesso",
 //                    Toast.LENGTH_SHORT).show();
-//
-//            Log.i(AppUtil.TAG, "Cliente " + cliente.getNome() + " alterado com sucesso");
 //        } else {
 //            Toast.makeText(MainActivity.this, "Cliente " + cliente.getNome() + " não alterado com sucesso",
 //                    Toast.LENGTH_SHORT).show();
-//            Log.e(AppUtil.TAG, "Produto " + cliente.getNome() + " não alterado com sucesso");
 //        }
     }
 
