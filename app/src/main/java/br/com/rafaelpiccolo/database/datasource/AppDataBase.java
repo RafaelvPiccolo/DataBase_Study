@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import br.com.rafaelpiccolo.database.api.AppUtil;
 import br.com.rafaelpiccolo.database.datamodel.ClienteDataModel;
-import br.com.rafaelpiccolo.database.datamodel.ProdutoDataModel;
 import br.com.rafaelpiccolo.database.model.Cliente;
 
 
@@ -33,8 +32,6 @@ public class AppDataBase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(ClienteDataModel.criarTabela());
         Log.d(AppUtil.TAG, "onCreate: Tabela Cliente criada..."+ClienteDataModel.criarTabela());
-        db.execSQL(ProdutoDataModel.criarTabela());
-        Log.d(AppUtil.TAG, "onCreate: Tabela Produto criada..."+ProdutoDataModel.criarTabela());
     }
 
     @Override
@@ -127,5 +124,33 @@ public class AppDataBase extends SQLiteOpenHelper {
 
         return clientes;
 
+    }
+
+    public boolean CheckifExistsInDB(String tabela, Integer id){
+        boolean retorno = false;
+
+        db = getWritableDatabase();
+
+        Cliente obj;
+
+        String sql = "SELECT * FROM "+tabela;
+
+        Cursor cursor;
+
+        cursor = db.rawQuery(sql, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                obj = new Cliente();
+
+                obj.setId(cursor.getInt(cursor.getColumnIndex(ClienteDataModel.ID)));
+                if(obj.getId() == id){
+                    retorno = true;
+                }
+            }while(cursor.moveToNext());
+
+        }
+
+        return retorno;
     }
 }

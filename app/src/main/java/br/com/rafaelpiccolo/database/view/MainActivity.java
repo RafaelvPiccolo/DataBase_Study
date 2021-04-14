@@ -2,22 +2,19 @@ package br.com.rafaelpiccolo.database.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.rafaelpiccolo.database.R;
-import br.com.rafaelpiccolo.database.api.AppUtil;
 import br.com.rafaelpiccolo.database.controller.ClienteController;
-import br.com.rafaelpiccolo.database.controller.ProdutoController;
 import br.com.rafaelpiccolo.database.model.Cliente;
-import br.com.rafaelpiccolo.database.model.Produto;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Cliente cliente;
     Button btnAdd, btnDelete, btnUpdate;
     EditText txtName, txtEmail, txtID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +58,15 @@ public class MainActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(txtID.getText().toString())){
+                int id = Integer.parseInt(txtID.getText().toString());
+
+                if (TextUtils.isEmpty(txtID.getText().toString())) {
                     txtID.setError("This field cannot be empty");
-                }
-                else {
-                    clienteController.deletar(txtID.getId());
+                } else if (clienteController.checkIfExistsInDB(id)) {
+                    clienteController.deletar(id);
+                } else {
+                    Toast.makeText(MainActivity.this, "This ID does not exists in database",
+                            Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -89,6 +91,4 @@ public class MainActivity extends AppCompatActivity {
 //                    Toast.LENGTH_SHORT).show();
 //        }
     }
-
-
 }
