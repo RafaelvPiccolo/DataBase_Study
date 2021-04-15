@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel" />
+        <device id="Nexus 10" />
+        <device id="pixel_4_xl" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="26481f3a-1c82-4931-8dfe-0f7970905575" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/datasource/AppDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/datasource/AppDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/view/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/view/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="emulator" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -36,7 +56,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="DataBase.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -106,5 +126,31 @@
       <updated>1618439679990</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1176" height="544" key="AVDManager" timestamp="1618510016034">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="92" y="92" width="1176" height="544" key="AVDManager/0.0.1360.728@0.0.1360.728" timestamp="1618510016034" />
+    <state width="1317" height="233" key="GridCell.Tab.0.bottom" timestamp="1618511427984">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="233" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1618511427984" />
+    <state width="1317" height="233" key="GridCell.Tab.0.center" timestamp="1618511427983">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="233" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1618511427983" />
+    <state width="1317" height="233" key="GridCell.Tab.0.left" timestamp="1618511427983">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="233" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1618511427983" />
+    <state width="1317" height="233" key="GridCell.Tab.0.right" timestamp="1618511427984">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="233" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1618511427984" />
+    <state x="181" y="8" key="SettingsEditor" timestamp="1618509778862">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="181" y="8" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1618509778862" />
   </component>
 </project>

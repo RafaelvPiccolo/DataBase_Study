@@ -6,18 +6,21 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import br.com.rafaelpiccolo.database.api.AppUtil;
 import br.com.rafaelpiccolo.database.datamodel.ClienteDataModel;
 import br.com.rafaelpiccolo.database.model.Cliente;
+import br.com.rafaelpiccolo.database.view.MainActivity;
 
 
 public class AppDataBase extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "AppMinhaIdeia.sqlite";
     public static final int DB_VERSION = 1;
+    Context context;
 
     SQLiteDatabase db;
 
