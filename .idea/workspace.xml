@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26481f3a-1c82-4931-8dfe-0f7970905575" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/datasource/AppDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/datasource/AppDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/view/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/rafaelpiccolo/database/view/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
