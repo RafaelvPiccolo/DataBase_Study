@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(txtID.getText().toString())) {
                     txtID.setError("This field cannot be empty");
-                } else if (clienteController.checkIfExistsInDB(id)) {
+                } else if (clienteController.checkIfExistsIDInDB(id)) {
                     clienteController.deletar(id);
                 } else {
                     Toast.makeText(MainActivity.this, "This ID does not exists in database",

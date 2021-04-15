@@ -126,7 +126,7 @@ public class AppDataBase extends SQLiteOpenHelper {
 
     }
 
-    public boolean CheckifExistsInDB(String tabela, Integer id){
+    public boolean CheckifExistsIDInDB(String tabela, Integer id){
         boolean retorno = false;
 
         db = getWritableDatabase();

@@ -51,7 +51,7 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
         return getAllClientes(ClienteDataModel.TABELA);
     }
 
-    public boolean checkIfExistsInDB(int id){
-        return CheckifExistsInDB(ClienteDataModel.TABELA, id);
+    public boolean checkIfExistsIDInDB(int id){
+        return CheckifExistsIDInDB(ClienteDataModel.TABELA, id);
     }
 }
